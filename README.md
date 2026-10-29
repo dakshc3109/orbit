@@ -131,13 +131,12 @@ The browser subscribes to the room with a Firebase realtime listener. A move is 
 
 ```text
 .
-├── public/
-│   ├── app.js              Firebase integration and game behavior
-│   ├── index.html          Semantic page structure and accessible markup
-│   └── styles.css          Responsive visual design and animations
+├── app.js                  Firebase integration and game behavior
+├── index.html              Semantic page structure and accessible markup
+├── styles.css              Responsive visual design and animations
 ├── database.rules.json     Firebase Realtime Database rules
 ├── firebase.json            Firebase CLI configuration
-└── vercel.json              Vercel deployment configuration
+└── README.md               Project documentation
 ```
 
 ## Firebase configuration
@@ -172,7 +171,7 @@ Add a custom domain too if one is connected to the Vercel project.
 
 ### Firebase web configuration
 
-The browser Firebase configuration is stored in [public/app.js](./public/app.js). Firebase web API keys are designed to be included in client applications. Never commit Firebase service-account JSON files, private keys, or Admin SDK credentials.
+The browser Firebase configuration is stored in [app.js](./app.js). Firebase web API keys are designed to be included in client applications. Never commit Firebase service-account JSON files, private keys, or Admin SDK credentials.
 
 If you use another Firebase project, replace the `firebaseConfig` object with the configuration from:
 
@@ -201,14 +200,14 @@ Firebase     → authentication and realtime game data
    Framework preset: Other
    Root directory: project root
    Build command: leave empty
-   Output directory: public
+   Output directory: leave empty
    ```
 
 5. Deploy the project.
 6. Add the generated Vercel domain to Firebase Authorized domains.
 7. Test the deployed URL in two browser windows.
 
-The [vercel.json](./vercel.json) file configures the `public` output directory.
+The root `index.html`, `styles.css`, and `app.js` files are served directly as a static Vercel deployment. No build command or custom Vercel configuration is required.
 
 ## Database rules and trust model
 

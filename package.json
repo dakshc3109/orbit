@@ -2,7 +2,7 @@
   "name": "tic-tac-toe-cloud",
   "version": "1.0.0",
   "private": true,
-  "description": "A real-time multiplayer Tic-Tac-Toe game powered by Socket.IO.",
+  "description": "A real-time multiplayer Tic-Tac-Toe game powered by Firebase Realtime Database.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

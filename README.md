@@ -22,9 +22,12 @@
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3">
   <img src="https://img.shields.io/badge/JavaScript-ES2022-F7DF1E?style=flat-square&logo=javascript&logoColor=111111" alt="JavaScript">
+  <img src="https://img.shields.io/badge/ES%20Modules-Modern%20JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=111111" alt="ECMAScript modules">
   <img src="https://img.shields.io/badge/Firebase-Anonymous%20Auth-FFCA28?style=flat-square&logo=firebase&logoColor=111111" alt="Firebase Anonymous Authentication">
   <img src="https://img.shields.io/badge/Firebase-Realtime%20Database-FFCA28?style=flat-square&logo=firebase&logoColor=111111" alt="Firebase Realtime Database">
+  <img src="https://img.shields.io/badge/Firebase%20Transactions-Concurrency-FFCA28?style=flat-square&logo=firebase&logoColor=111111" alt="Firebase transactions">
   <img src="https://img.shields.io/badge/Vercel-Ready-000000?style=flat-square&logo=vercel" alt="Vercel ready">
+  <img src="https://img.shields.io/badge/GitHub-Source%20Control-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub">
   <img src="https://img.shields.io/badge/Responsive-Mobile%20%26%20Desktop-62DDF5?style=flat-square" alt="Responsive design">
 </p>
 
@@ -43,7 +46,7 @@ Orbit is a browser-based multiplayer Tic-Tac-Toe experience. A player creates a 
 
 The project is intentionally lightweight: the frontend is built with standard web technologies, Firebase provides authentication and realtime state synchronization, and Vercel can host the production application without a long-running custom server.
 
-> **Technology note:** This project uses standard HTML, CSS, and modern JavaScript rather than Next.js or Tailwind CSS. Firebase is the production authentication and realtime backend, while Vercel serves the static frontend.
+> **Technology note:** This project uses standard HTML, CSS, and modern JavaScript rather than Next.js or Tailwind CSS. Firebase is the production authentication and realtime backend, while Vercel serves the static frontend. Next.js is intentionally not listed because it is not part of this implementation.
 
 ## Live product flow
 

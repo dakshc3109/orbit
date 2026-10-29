@@ -32,7 +32,7 @@
   <a href="#live-product-flow">Overview</a> ·
   <a href="#highlights">Features</a> ·
   <a href="#-architecture">Architecture</a> ·
-  <a href="#-deploy-to-vercel">Deploy</a>
+  <a href="#-technology">Technology</a>
 </p>
 
 </div>
@@ -138,76 +138,6 @@ The browser subscribes to the room with a Firebase realtime listener. A move is 
 ├── firebase.json            Firebase CLI configuration
 └── README.md               Project documentation
 ```
-
-## Firebase configuration
-
-### Enable Anonymous Authentication
-
-In Firebase Console:
-
-1. Open **Build → Authentication**.
-2. Open **Sign-in method**.
-3. Enable **Anonymous**.
-4. Save the provider.
-
-### Create Realtime Database
-
-1. Open **Build → Realtime Database**.
-2. Create the database.
-3. Choose the database region.
-4. Publish the rules from [database.rules.json](./database.rules.json).
-
-### Add authorized domains
-
-In **Authentication → Settings → Authorized domains**, add:
-
-```text
-localhost
-127.0.0.1
-your-project.vercel.app
-```
-
-Add a custom domain too if one is connected to the Vercel project.
-
-### Firebase web configuration
-
-The browser Firebase configuration is stored in [app.js](./app.js). Firebase web API keys are designed to be included in client applications. Never commit Firebase service-account JSON files, private keys, or Admin SDK credentials.
-
-If you use another Firebase project, replace the `firebaseConfig` object with the configuration from:
-
-```text
-Firebase Console → Project settings → Your apps → Web app
-```
-
-## Deploy to Vercel
-
-The recommended production setup is:
-
-```text
-GitHub       → source code and version history
-Vercel       → frontend hosting and deployments
-Firebase     → authentication and realtime game data
-```
-
-### Deployment steps
-
-1. Push the project to a GitHub repository.
-2. Open [Vercel](https://vercel.com) and choose **Add New Project**.
-3. Import the GitHub repository.
-4. Use these settings:
-
-   ```text
-   Framework preset: Other
-   Root directory: project root
-   Build command: leave empty
-   Output directory: leave empty
-   ```
-
-5. Deploy the project.
-6. Add the generated Vercel domain to Firebase Authorized domains.
-7. Test the deployed URL in two browser windows.
-
-The root `index.html`, `styles.css`, and `app.js` files are served directly as a static Vercel deployment. No build command or custom Vercel configuration is required.
 
 ## Database rules and trust model
 

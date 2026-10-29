@@ -22,8 +22,6 @@
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3">
   <img src="https://img.shields.io/badge/JavaScript-ES2022-F7DF1E?style=flat-square&logo=javascript&logoColor=111111" alt="JavaScript">
-  <img src="https://img.shields.io/badge/Node.js-18%2B-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js 18 or newer">
-  <img src="https://img.shields.io/badge/Express.js-Local%20Server-000000?style=flat-square&logo=express&logoColor=white" alt="Express.js">
   <img src="https://img.shields.io/badge/Firebase-Anonymous%20Auth-FFCA28?style=flat-square&logo=firebase&logoColor=111111" alt="Firebase Anonymous Authentication">
   <img src="https://img.shields.io/badge/Firebase-Realtime%20Database-FFCA28?style=flat-square&logo=firebase&logoColor=111111" alt="Firebase Realtime Database">
   <img src="https://img.shields.io/badge/Vercel-Ready-000000?style=flat-square&logo=vercel" alt="Vercel ready">
@@ -45,7 +43,7 @@ Orbit is a browser-based multiplayer Tic-Tac-Toe experience. A player creates a 
 
 The project is intentionally lightweight: the frontend is built with standard web technologies, Firebase provides authentication and realtime state synchronization, and Vercel can host the production application without a long-running custom server.
 
-> **Technology note:** This project uses standard HTML, CSS, and modern JavaScript rather than Next.js or Tailwind CSS. Node.js and Express are included only for local static-file serving; Firebase is the production realtime backend.
+> **Technology note:** This project uses standard HTML, CSS, and modern JavaScript rather than Next.js or Tailwind CSS. Firebase is the production authentication and realtime backend, while Vercel serves the static frontend.
 
 ## Live product flow
 
@@ -92,7 +90,6 @@ The interface avoids unnecessary menus and keeps the primary action visible at e
 | Markup | HTML5 |
 | Styling | CSS3 with responsive layouts and custom animations |
 | Client logic | Modern browser JavaScript using ES modules |
-| Local development server | Node.js 18+ and Express |
 | Authentication | Firebase Anonymous Authentication |
 | Realtime state | Firebase Realtime Database |
 | Production hosting | Vercel |
@@ -140,8 +137,6 @@ The browser subscribes to the room with a Firebase realtime listener. A move is 
 │   └── styles.css          Responsive visual design and animations
 ├── database.rules.json     Firebase Realtime Database rules
 ├── firebase.json            Firebase CLI configuration
-├── package.json             Local scripts and dependencies
-├── server.js                Local static-file server
 └── vercel.json              Vercel deployment configuration
 ```
 
@@ -239,7 +234,7 @@ For a larger or adversarial production environment, game validation should move 
 
 ## Scalability
 
-Room data lives in Firebase, so multiple players and approximately 5–10 simultaneous rooms can operate independently without depending on a single application process.
+Room data lives in Firebase, so multiple players and approximately 5–10 simultaneous rooms can operate independently without depending on a custom application server.
 
 For a larger public launch, consider:
 

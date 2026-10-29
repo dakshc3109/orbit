@@ -34,7 +34,6 @@
   <a href="#live-product-flow">Overview</a> ·
   <a href="#highlights">Features</a> ·
   <a href="#-architecture">Architecture</a> ·
-  <a href="#-run-locally">Run locally</a> ·
   <a href="#-deploy-to-vercel">Deploy</a>
 </p>
 
@@ -71,7 +70,7 @@ The project is intentionally lightweight: the frontend is built with standard we
 - Five-character, human-readable room codes
 - Responsive glassmorphism-inspired interface for mobile and desktop
 - Accessible labels for board cells, controls, status text, and result dialogs
-- Deployable to Vercel with no persistent Node.js WebSocket server
+- Deployable to Vercel as a static frontend with Firebase as the cloud backend
 
 ## Product and design decisions
 
@@ -145,40 +144,6 @@ The browser subscribes to the room with a Firebase realtime listener. A move is 
 ├── server.js                Local static-file server
 └── vercel.json              Vercel deployment configuration
 ```
-
-## Run locally
-
-### Requirements
-
-- Node.js 18 or newer
-- A Firebase project
-- Firebase Anonymous Authentication enabled
-- Firebase Realtime Database created
-
-### Install and start
-
-```bash
-git clone https://github.com/dakshc3109/orbit.git
-cd orbit
-npm install
-npm start
-```
-
-Open:
-
-```text
-http://localhost:3000
-```
-
-To test multiplayer locally, open the URL in two separate browser tabs or windows. Create a room in one tab and join its code in the other.
-
-### Validate before deployment
-
-```bash
-npm run check
-```
-
-This checks the syntax of both the local server and browser JavaScript.
 
 ## Firebase configuration
 
@@ -274,7 +239,7 @@ For a larger or adversarial production environment, game validation should move 
 
 ## Scalability
 
-The application does not keep rooms in a single Node.js process. Room data lives in Firebase, so multiple players and approximately 5–10 simultaneous rooms can operate independently without requiring a persistent WebSocket server.
+Room data lives in Firebase, so multiple players and approximately 5–10 simultaneous rooms can operate independently without depending on a single application process.
 
 For a larger public launch, consider:
 

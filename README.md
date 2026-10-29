@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>✦ Orbit</h1>
+<h1>Orbit</h1>
 
 <h3>Real-Time Multiplayer Tic-Tac-Toe</h3>
 
@@ -68,7 +68,6 @@ The project is intentionally lightweight: the frontend is built with standard we
 - Five-character, human-readable room codes
 - Responsive glassmorphism-inspired interface for mobile and desktop
 - Accessible labels for board cells, controls, status text, and result dialogs
-- Deployable to Vercel as a static frontend with Firebase as the cloud backend
 
 ## Product and design decisions
 
@@ -139,52 +138,6 @@ The browser subscribes to the room with a Firebase realtime listener. A move is 
 └── README.md               Project documentation
 ```
 
-## Database rules and trust model
-
-The included rules require Firebase authentication before a user can access room data:
-
-```json
-{
-  "rules": {
-    ".write": false,
-    "rooms": {
-      "$roomCode": {
-        ".read": "auth != null",
-        ".write": "auth != null"
-      }
-    }
-  }
-}
-```
-
-This is suitable for a small demonstration and portfolio application using anonymous players. The client handles room capacity, move ordering, and game rules.
-
-For a larger or adversarial production environment, game validation should move to a trusted backend or Firebase Cloud Functions. That backend could validate every move, enforce room membership server-side, rate-limit requests, and remove abandoned rooms automatically.
-
-## Scalability
-
-Room data lives in Firebase, so multiple players and approximately 5–10 simultaneous rooms can operate independently without depending on a custom application server.
-
-For a larger public launch, consider:
-
-- Firebase App Check
-- Server-side move validation with Cloud Functions
-- Rate limiting and abuse monitoring
-- Automatic expiration for abandoned rooms
-- Analytics and error monitoring
-- A persistent player identity system
-
-## Future improvements
-
-- Invite links that open a room directly
-- Player display names and avatars
-- Match history and rematch statistics
-- Spectator mode
-- Sound and reduced-motion preferences
-- Light theme
-- Automated end-to-end multiplayer tests
-- Cloud Functions for authoritative game validation
-
 ## Why this project
 
 Orbit demonstrates more than a static game board. It combines:
@@ -199,6 +152,4 @@ Orbit demonstrates more than a static game board. It combines:
 
 It is a compact example of turning a familiar game into a reliable, inviting, and deployable web product.
 
-## License
-
-This project is available for educational and portfolio use. Add a formal license here if the repository will be distributed publicly.
+Copyright (c) 2026 Daksh Chaudhary 

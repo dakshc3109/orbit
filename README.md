@@ -13,7 +13,7 @@
   <a href="https://github.com/dakshc3109/orbit">
     <img src="https://img.shields.io/badge/Source%20Code-GitHub-181717?style=for-the-badge&logo=github" alt="Source code on GitHub">
   </a>
-  <a href="https://orbit.vercel.app">
+  <a href="https://orbit.dakshc.me">
     <img src="https://img.shields.io/badge/Live%20Demo-Vercel-000000?style=for-the-badge&logo=vercel" alt="Live demo on Vercel">
   </a>
 </p>

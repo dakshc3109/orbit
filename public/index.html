@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11131d">
+  <meta name="description" content="Orbit is a real-time multiplayer Tic-Tac-Toe game for two players.">
+  <title>Orbit — Multiplayer Tic-Tac-Toe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="site-header">
+      <div class="brand"><div class="brand-mark">✦</div> orbit</div>
+      <div class="eyebrow">real-time play</div>
+    </header>
+
+    <section id="landing" class="screen hero">
+      <div class="eyebrow">classic game · new energy</div>
+      <h1>Make your move.</h1>
+      <p class="hero-copy">
+        A tiny arena for two minds. Create a room, invite a friend, and see who can claim three in a row.
+      </p>
+
+      <div class="setup-grid">
+        <article class="card">
+          <h2>Create a room</h2>
+          <p>Start a new game and share your private room code with a friend.</p>
+          <button id="createBtn" class="primary" type="button">Create room <span>→</span></button>
+        </article>
+
+        <article class="card">
+          <h2>Join a room</h2>
+          <p>Have a code already? Enter it below to jump straight into the game.</p>
+          <div class="join-row">
+            <label class="sr-only" for="roomInput">Room code</label>
+            <input id="roomInput" maxlength="5" placeholder="ROOM CODE" autocomplete="off" aria-label="Room code">
+            <button id="joinBtn" class="primary" type="button">Join</button>
+          </div>
+          <div id="error" class="error" role="alert"></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="game" class="screen hidden" aria-live="polite">
+      <div class="room-banner">
+        <div>
+          <div class="eyebrow">you are in room</div>
+          <div id="roomCode" class="room-code">-----</div>
+        </div>
+        <button id="copyBtn" class="copy-btn" type="button">Copy code</button>
+      </div>
+
+      <div class="game-panel">
+        <div class="status">
+          <div id="turnText" class="turn">Waiting for opponent</div>
+          <div id="playersText" class="players">1 / 2 players</div>
+        </div>
+        <div id="board" class="board" role="grid" aria-label="Tic-Tac-Toe board"></div>
+        <p id="waitingText" class="waiting">Share your room code to invite a friend.</p>
+        <button id="leaveBtn" class="leave" type="button">Leave room</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="resultModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+    <div class="modal-card">
+      <div id="resultIcon" class="result-icon">✦</div>
+      <h2 id="resultTitle">Game over</h2>
+      <p id="resultCopy"></p>
+      <button id="againBtn" class="primary" type="button">Play again</button>
+    </div>
+  </div>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
